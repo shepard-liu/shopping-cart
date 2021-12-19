@@ -1,0 +1,106 @@
+.cart-header {
+    margin-top: 25px;
+}
+
+.cart-header--header {
+    display: flex;
+    align-items: bottom;
+}
+.cart-header--header--goods-count {
+    flex: 1;
+    color: var(--theme-color);
+    font-size: var(--big-font-size);
+}
+
+.cart-header--header--filter-btns {
+    flex: 3;
+    direction: rtl;
+    padding-right: 15px;
+}
+
+.cart-header--header--filter-btns--all {
+}
+
+.cart-header--header--filter-btns--selected {
+}
+
+.cart-header--header--filter-btns--unselected {
+}
+
+.cart-header--header--search-auto-complete {
+    flex: 2;
+    max-width: 350px;
+}
+
+.cart-header--header--search {
+    color: white;
+}
+
+.cart-header--header--search--option {
+    font-size: var(--small-font-size);
+}
+
+.cart-header--header--search--option--fallback {
+    font-weight: bold;
+}
+
+.cart-header--header--search--option--left-string {
+}
+
+.cart-header--header--search--option--search-string {
+    background-color: rgba(0, 145, 255, 0.692);
+    color: white;
+    border-radius: 3px;
+}
+
+.cart-header--header--search--option--right-string {
+}
+
+.cart-header--list-header {
+    margin-top: 15px;
+    display: flex;
+    background-color: #eee;
+    border-radius: 7px;
+    font-size: var(--small-font-size);
+    padding: 5px 0 5px 0;
+}
+
+%cart-header--list-header-item {
+}
+
+.cart-header--list-header--select-all {
+    @extend %cart-header--list-header-item;
+    padding-left: 10px;
+    flex: 0 0 var(--col-4);
+    font-size: var(--small-font-size);
+}
+
+.cart-header--list-header--good {
+    @extend %cart-header--list-header-item;
+    padding-left: 0;
+    flex: 0 0 var(--col-10);
+}
+
+.cart-header--list-header--unit-price {
+    @extend %cart-header--list-header-item;
+    text-align: center;
+    flex: 0 0 var(--col-3);
+}
+
+.cart-header--list-header--amount {
+    @extend %cart-header--list-header-item;
+    text-align: center;
+    flex: 0 0 var(--col-2);
+}
+
+.cart-header--list-header--subtotal {
+    @extend %cart-header--list-header-item;
+    flex: 0 0 var(--col-3);
+    text-align: center;
+}
+
+.cart-header--list-header--action {
+    @extend %cart-header--list-header-item;
+    flex: 0 0 var(--col-2);
+    text-align: center;
+}

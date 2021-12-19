@@ -1,14 +1,14 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 
+import 'antd/dist/antd.less';
 import './index.scss';
 
-import Counter from './counter/counter';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App/App";
 
 ReactDOM.render(
-    (<React.StrictMode>
-        <Counter name='Counter' value={0} onClick={(value: number) => value + 1} />
-        <footer>Please delete template tsx and scss files before coding.</footer>
-    </React.StrictMode >), document.getElementById('root')
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+    , document.getElementById('root')
 );
- 

@@ -3,10 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 // const ErrorOverlayWebpackPlugin = require('error-overlay-webpack-plugin');
 
 module.exports = (env) => {
-    
+
     return {
         entry: {
             index: path.resolve(__dirname, './src/index.tsx'),
@@ -27,16 +28,31 @@ module.exports = (env) => {
                 },
                 // Stylesheets
                 {
-                    test: /\.(scss|css)$/,
+                    test: /\.(css|scss)$/,
                     use: [
-                        env.production
-                            ? 'style-loader'
-                            : MiniCssExtractPlugin.loader,
+                        'style-loader',
                         'css-loader',
                         {
                             loader: 'sass-loader',
                             options: {
                                 sourceMap: true
+                            }
+                        }
+                    ]
+                },
+                {
+                    test: /\.less$/,
+                    use: [
+                        'style-loader', 'css-loader',
+                        {
+                            loader: 'less-loader',
+                            options: {
+                                lessOptions: {
+                                    modifyVars: {
+                                        "primary-color": '#ff4d4f'
+                                    },
+                                    javascriptEnabled: true,
+                                }
                             }
                         }
                     ]
@@ -54,6 +70,15 @@ module.exports = (env) => {
             ],
         },
         plugins: [
+            // Copy assets
+            new CopyWebpackPlugin({
+                patterns: [
+                    {
+                        from: path.join(__dirname, './src/assets'),
+                        to: path.join(__dirname, './dist/assets')
+                    }
+                ]
+            }),
             // CSS minifier
             new MiniCssExtractPlugin({
                 // Options similar to the same options in webpackOptions.output
@@ -69,7 +94,8 @@ module.exports = (env) => {
             // ESLint plugin for checking code styles
             new EslintWebpackPlugin({
                 extensions: ['.tsx', '.ts', '.js'],
-                exclude: ['node_modules']
+                exclude: ['node_modules'],
+                quiet: true
             }),
             // Show pretty error overlay when app crashes in development
             // This plugin is currently not available with Webpack 5 (Webpack Dev Server v4)

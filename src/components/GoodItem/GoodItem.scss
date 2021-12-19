@@ -1,0 +1,195 @@
+%good-item-base {
+    display: flex;
+    padding-top: 10px;
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.good-item--popover {
+}
+
+.good-item--popover--text {
+    max-width: 30vw;
+}
+
+.good-item {
+    @extend %good-item-base;
+    transition-duration: 500ms;
+}
+
+.good-item:hover {
+    background-color: rgba(221, 221, 221, 0.301);
+    transition-duration: 500ms;
+}
+
+.good-item-warn {
+    @extend %good-item-base;
+    background-color: #faad1415;
+}
+
+.good-item-error {
+    color: #aaa;
+    @extend %good-item-base;
+    background-color: #ff4d501a;
+}
+
+.good-item--check-and-image {
+    height: inherit;
+    display: flex;
+
+    flex: 0 0 var(--col-4);
+    padding-left: 10px;
+}
+
+.good-item--check-and-image--checkbox {
+    display: flex;
+    justify-content: center;
+}
+
+.good-item--check-and-image--image {
+    padding-left: 10px;
+    height: inherit;
+}
+
+.good-item--image--item-image {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    width: 85%;
+    max-height: 100%;
+}
+
+.good-item--info {
+    padding: 0;
+    flex: 0 0 var(--col-6);
+    min-width: 0;
+}
+
+.good-item--info--name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    display: block;
+}
+
+.good-item--info--description {
+    padding-top: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--extra-small-font-size);
+}
+
+.good-item--sub-name {
+    flex: 0 0 var(--col-4);
+
+    padding-left: 10px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    display: block;
+}
+
+.good-item--unit-price {
+    flex: 0 0 var(--col-3);
+
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.good-item--unit-price--text {
+}
+
+.good-item--amount {
+    flex: 0 0 var(--col-2);
+
+    text-align: center;
+}
+
+.good-item--amount--input-group {
+    display: flex;
+}
+
+%btn {
+    width: 35px;
+    height: 25px;
+    display: inline;
+    padding: 0;
+}
+
+.good-item--amount--input-group--decrement-btn {
+    @extend %btn;
+    border-right: 0;
+}
+
+.good-item--amount--input-group--increment-btn {
+    @extend %btn;
+    border-left: 0;
+}
+
+.good-item--amount--input-group--input-box {
+    display: inline;
+    height: 25px;
+    text-align: center;
+}
+
+.good-item--amount--stock-info {
+    display: block;
+    margin-top: 8px;
+    font-size: var(--extra-small-font-size);
+}
+
+.good-item--amount--stock-info--warn-remaining-stock {
+    color: var(--theme-warn);
+    font-weight: bold;
+}
+
+.good-item--amount--stock-info--warn-none-left {
+    color: var(--theme-error);
+}
+
+.good-item--amount--stock-info--sufficient {
+}
+
+.good-item--subtotal {
+    height: 20px;
+    flex: 0 0 var(--col-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.good-item--subtotal--text {
+    height: 18px;
+}
+
+.good-item--action {
+    flex: 0 0 var(--col-2);
+    display: flex;
+    justify-content: center;
+}
+
+.good-item--action--delete-btn {
+    font-size: var(--extra-small-font-size);
+    width: 45px;
+    height: 23px;
+    padding: 0;
+    letter-spacing: 0;
+    word-spacing: 0;
+    border-color: var(--theme-error);
+    transition-duration: 300ms;
+}
+
+.good-item--action--delete-btn:hover {
+    background-color: var(--theme-error);
+    color: white;
+    transition-duration: 300ms;
+}

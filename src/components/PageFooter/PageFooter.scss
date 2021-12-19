@@ -1,0 +1,21 @@
+.page-footer {
+    text-align: center;
+    color: var(--theme-font-color);
+    margin-top: 30px;
+    background-color: #ddd;
+    padding: 40px 0 40px 0;
+}
+.page-footer--foot-note {
+}
+
+.page-footer--author {
+    margin-top: 5px;
+    font-family: "Times New Roman";
+    font-style: italic;
+}
+
+.page-footer--date {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    margin-top: 10px;
+    letter-spacing: 4px;
+}

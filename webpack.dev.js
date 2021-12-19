@@ -19,5 +19,10 @@ module.exports = merge(common(env), {
         host: 'localhost',
         // With this enabled, page refreshes automatically when rebuilt
         hot: true,
+        devMiddleware: {
+            index: true,
+            publicPath: '/',
+            writeToDisk: true,
+        },
     },
 });

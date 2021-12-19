@@ -1,0 +1,38 @@
+.cart-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 25px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    height: 50px;
+}
+
+.cart-footer--total-text {
+    font-size: var(--extra-small-font-size);
+    color: #888;
+    margin-right: 15px;
+    letter-spacing: 3px;
+}
+
+.cart-footer--total {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.cart-footer--total--rmb-sign {
+}
+
+.cart-footer--total--price {
+    color: var(--theme-color);
+    font-size: var(--big-font-size);
+    font-weight: bold;
+}
+
+.cart-footer--order-btn {
+    font-weight: bold;
+    height: 50px;
+    font-size: var(--normal-heading-font-size);
+}

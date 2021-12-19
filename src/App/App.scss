@@ -1,0 +1,23 @@
+.app {
+    max-width: 100%;
+}
+
+.app--space {
+    flex: 0 0 var(--col-3);
+    min-width: 0;
+}
+
+.app--main {
+    flex: 0 0 var(--col-18);
+    min-width: 0;
+}
+
+.app--cart-container {
+    display: flex;
+}
+
+.app--sep-line {
+    margin: 30px 3px 30px 3px;
+    background-color: #ddd;
+    height: 2px;
+}
